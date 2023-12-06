@@ -16,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
     //fetch all users 
+<<<<<<< HEAD
     // $users = DB::select("SELECT * FROM users");
+=======
+    $users = DB::select("SELECT * FROM users");
+>>>>>>> 243e35b9ad0a1187faba8381bd999046897fc66b
     
     //create new user
     // $user = DB::insert('insert into users (username,email,password) VALUES(?,?,?)', ['mac', 'mac1@gmail.com', 'password']);
@@ -27,10 +31,17 @@ Route::get('/', function () {
     //$user = DB::update("update users set email='new1mail@gmail.com' WHERE username='mac'");
 
     //delete user
+<<<<<<< HEAD
     // $user = DB::delete("delete from users where id=1");
 
 
     // dd($users);
+=======
+    $user = DB::delete("delete from users where id=1");
+
+
+    dd($users);
+>>>>>>> 243e35b9ad0a1187faba8381bd999046897fc66b
 }); 
 
 Route::get('/dashboard', function () {
