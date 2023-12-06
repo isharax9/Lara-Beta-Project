@@ -22,8 +22,9 @@ Route::get('/', function () {
     
     //create new user
     // $user = DB::insert('insert into users (username,email,password) VALUES(?,?,?)', ['mac', 'mac1@gmail.com', 'password']);
+    $user = DB::update("update users set email='new1mail@gmail.com' WHERE username='mac'");
     dd($users);
-});
+}); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
