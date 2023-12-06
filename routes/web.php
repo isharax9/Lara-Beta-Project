@@ -22,7 +22,14 @@ Route::get('/', function () {
     
     //create new user
     // $user = DB::insert('insert into users (username,email,password) VALUES(?,?,?)', ['mac', 'mac1@gmail.com', 'password']);
-    $user = DB::update("update users set email='new1mail@gmail.com' WHERE username='mac'");
+    
+    //update user
+    //$user = DB::update("update users set email='new1mail@gmail.com' WHERE username='mac'");
+
+    //delete user
+    $user = DB::delete("delete from users where id=1");
+
+
     dd($users);
 }); 
 
