@@ -16,10 +16,13 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
     //fetch all users 
-    // $users = DB::select("SELECT * FROM users");
-    // dd($users);
+    $users = DB::select("SELECT * FROM users");
+    
+    //create new user
+    // $user = DB::insert('insert into users (username,email,password) VALUES(?,?,?)', ['mac', 'mac1@gmail.com', 'password']);
+    dd($users);
 });
 
 Route::get('/dashboard', function () {
