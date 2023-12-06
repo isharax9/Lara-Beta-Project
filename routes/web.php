@@ -16,11 +16,22 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
     //fetch all users 
-    // $users = DB::select("SELECT * FROM users");
-    // dd($users);
-});
+    $users = DB::select("SELECT * FROM users");
+    
+    //create new user
+    // $user = DB::insert('insert into users (username,email,password) VALUES(?,?,?)', ['mac', 'mac1@gmail.com', 'password']);
+    
+    //update user
+    //$user = DB::update("update users set email='new1mail@gmail.com' WHERE username='mac'");
+
+    //delete user
+    $user = DB::delete("delete from users where id=1");
+
+
+    dd($users);
+}); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
