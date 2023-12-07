@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
     //fetch all users 
     // $users = DB::select("SELECT * FROM users");
-    // dd($users);
+    $users = DB::table('users')->where('id',3)->get();
+    dd($users);
+    
 });
 
 Route::get('/dashboard', function () {
