@@ -19,9 +19,14 @@ Route::get('/', function () {
     //return view('welcome');
     //fetch all users 
     // $users = DB::select("SELECT * FROM users");
-    $users = DB::table('users')->where('id',3)->get();
-    dd($users);
-    
+    // $users = DB::table('users')->where('id',3)->get();
+    $user = DB::table('users')->where('id', '3')->first();
+    return $user->name;
+});
+
+Route::get('/', function () {
+    Debugbar::addMessage('INFO!');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
@@ -34,4 +39,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
