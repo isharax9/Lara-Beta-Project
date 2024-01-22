@@ -1,2 +1,2 @@
 # Test-app
-in here i will test out some new features of Laravel
+in here i will test and leran out some new features of Laravel
